@@ -1,0 +1,30 @@
+/** responsive indicator
+ *  --------------------
+ *  Used by our javascript to accurately work out which breakpoint we're in.
+ *  numbered 1 - x based on px width
+ *  for each breakpoint added to $grid_breakpoints in _settings.breakpoints.scss
+**/
+
+.responsive-indicator {
+  position: absolute;
+  background: transparent;
+  z-index: $brand-z-0--responsive-indicator;
+}
+
+@each $breakpoint in $breakpoints {
+  // sass loop goes over all of the breakpoints in this build, outputs incremental media queries.
+  $alias: nth($breakpoint, 1);
+  $declaration: nth($breakpoint, 2);
+
+  @if ($alias != 'retina') {
+    // This isn’t ideal, excludes retina media-qeuries manually.
+    $i: index($breakpoints, $breakpoint);
+
+    @include media-query($alias) {
+
+      .responsive-indicator {
+        width: #{$i}px;
+      }
+    }
+  }
+}

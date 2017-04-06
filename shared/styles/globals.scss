@@ -1,0 +1,101 @@
+/* ---------------------------------------- *\
+    Global styles.
+    --------------
+    This stylesheet includes core global styling.
+    These are styles that are intended as a base level for our components to build off of.
+    We normalise and lightly style core HTML elements but component level styling occurs in
+    the individual component stylesheets (shared/styles/components).
+
+    -
+
+    inuitcss (https://github.com/inuitcss/inuitcss)
+    --------
+    We currently use several of the low level styling elements from inuit css
+    We're by no means utilising the full inuitcss library and it may be worth replacing this
+    dependancy at some stage.
+
+    -
+
+    webpack, ~ import and url()
+    ---------------------------
+    Webpack processes all of our scss files, it can optionally read our import and url() statements
+    resolving the paths using all of the webpack settings (i.e. the aliases in resolve {...}).
+    Prefixing our paths with ~ tells webpack that it should process them.
+    Paths that are not prefixed with ~ are processed relatively.
+    To avoid confusion, we've chosen to prefix ALL of our imports and url() with ~
+    Webpack will resolve each one and we typically use ~Shared/styles/... or ~Public/... to point
+    to stylesheets or resources.
+\* ---------------------------------------- */
+
+/** Variables:
+ *  ----------
+ *  This imports a collection of other stylesheets that comprise all of our branding, sitewide
+ *  variables and mixins...
+**/
+@import '~Shared/styles/variables';
+
+/** Generic:
+ *  --------
+ * Low-specificity, far-reaching rulesets (e.g. resets).
+**/
+@import '~inuitcss/generic/generic.box-sizing';
+@import '~inuitcss/generic/generic.normalize';
+@import '~inuitcss/generic/generic.reset';
+
+@import '~inuitcss/generic/generic.shared';
+
+// responsive indicator styling
+@import '~Shared/styles/generic/generic.responsive-indicator';
+
+// font imports and defaults
+@import '~Shared/styles/generic/generic.fonts';
+
+/** Elements:
+ *  ---------
+ * Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+**/
+
+// styles on the HTML element
+@import '~inuitcss/elements/elements.page';
+
+// heading font-sizes
+@import '~inuitcss/elements/elements.headings';
+
+// global 'body' styles
+@import '~Shared/styles/elements/elements.base';
+
+// selection colours
+@import '~Shared/styles/elements/elements.highlights';
+
+// basic flexible width & remove whitespace
+@import '~Shared/styles/elements/elements.images';
+
+// links
+@import '~Shared/styles/elements/elements.links';
+
+// typographical defaults/overwrites for header/p styles
+@import '~Shared/styles/elements/elements.typography';
+
+// a more opinionated form reset
+@import '~Shared/styles/elements/elements.forms';
+
+/** Objects:
+ *  --------
+ * Objects, abstractions, and design patterns (e.g. .media {}).
+**/
+
+// .wrap class
+@import '~Shared/styles/objects/objects.wrap';
+
+/** Utilities:
+ *  ----------
+ * High-specificity, very explicit selectors.
+ * Overrides and helper classes (e.g. .hidden {}).
+**/
+// @import '~inuitcss/utilities/utilities.print';
+
+// hiding/showing js
+@import '~Shared/styles/utilities/utilities.js';
+
+// html5bp helper classes
+@import '~Shared/styles/utilities/utilities.helpers';

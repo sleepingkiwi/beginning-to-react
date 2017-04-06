@@ -1,0 +1,23 @@
+# mac os
+# ------
+
+.DS_Store
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+
+
+# every time
+# ----------
+
+*.sass-cache
+bower_components
+node_modules
+
+
+# project specific
+# ----------------
+
+*.psd
+/dist

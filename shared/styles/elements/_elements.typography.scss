@@ -1,0 +1,36 @@
+/** basic typography and weighting
+ *  ------------------------------
+**/
+
+h1,
+.alpha,
+h2,
+.beta,
+h3,
+.gamma,
+h4,
+.delta,
+h5,
+.epsilon,
+h6,
+.zeta {
+  font-family: $brand-ff-header;
+  font-weight: normal;
+}
+
+strong {
+  font-weight: bold;
+  font-family: $brand-ff-bold;
+}
+
+strong em,
+em strong {
+  font-style: italic;
+  font-weight: bold;
+  font-family: $brand-ff-bold;
+}
+
+/**
+ * if we were having italic or bolditalic fonts then we would add more specific
+ * rules here for <em> tags etc.
+ */

@@ -1,0 +1,15 @@
+/** rules for the Example component
+ *  -------------------------------
+**/
+
+// importing variables, mixins etc.
+@import '~Shared/styles/variables';
+
+// some example styles
+.Example {
+  padding: $bsu;
+
+  &.wrap {
+    max-width: $brand-layout-readable;
+  }
+}

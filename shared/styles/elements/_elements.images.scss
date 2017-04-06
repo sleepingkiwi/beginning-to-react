@@ -1,0 +1,14 @@
+/** images
+ *  ------
+ *  basic defaults for image elements
+**/
+
+img {
+  // For responsive purposes.
+  max-width: 100%;
+  // Offsets `alt` text from surrounding copy.
+  font-style: italic;
+  // Removes whitespace that appears without a vertical-align specified
+  // display: block achieves the same effect but we don't want to set that as a default...
+  vertical-align: middle;
+}

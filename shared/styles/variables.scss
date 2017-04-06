@@ -1,0 +1,37 @@
+/** Variables
+ *  ---------
+ *  This is designed to conveniently let other stylesheets import all of our variables and mixins
+ *  with a single import statement...
+**/
+
+/** Settings:
+ *  ---------
+ * Global variables, site-wide settings, config switches, etc.
+**/
+// brand and default settings
+@import 'settings/settings.brand';
+@import 'settings/settings.z-index';
+@import 'settings/settings.font-defaults';
+@import 'settings/settings.social-colours';
+
+// core settings for inuitcss
+@import '~inuitcss/settings/settings.core';
+
+// sets up media queries and $valet,$squire,$baron etc. size variables
+@import 'settings/settings.breakpoints';
+
+/** Tools:
+ *  ------
+ * Site-wide mixins and functions.
+**/
+@import '~inuitcss/tools/tools.rem';
+
+// @include inuit-font-size(16px){}
+// (optionally inuit-font-size(16px, 1.8) to set line-height explicitly)
+@import '~inuitcss/tools/tools.font-size';
+
+// @include media-query(squire){...}
+@import 'tools/tools.breakpoints';
+
+// Shorter aliases for common vars
+@import 'tools/tools.aliases';

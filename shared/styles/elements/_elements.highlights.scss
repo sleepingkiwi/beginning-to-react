@@ -1,0 +1,27 @@
+/** selection colours for text and links
+ *  ------------------------------------
+ *  ::-moz-selection fails if included in a group, hence each selector has it's own rules...
+**/
+::-moz-selection {
+  background: $brand-c-main;
+  color: $brand-c-inverse;
+  text-shadow: none;
+}
+
+::selection {
+  background: $brand-c-main;
+  color: $brand-c-inverse;
+  text-shadow: none;
+}
+
+a::-moz-selection {
+  background: $brand-c-link;
+  color: $brand-c-inverse;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+a::selection {
+  background: $brand-c-link;
+  color: $brand-c-inverse;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,65 @@
+/** Javascript helpers
+ *  ------------------
+ *  specifically related to hiding and showing for javascript...
+**/
+.js--only {
+
+  .no-js & {
+    display: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+.js--no-js {
+
+  .js & {
+    display: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+// visually hidden when js is available
+// these are generally things that are animated/shown by js
+.js--no-js-visible,
+.js--visuallyhidden {
+
+  .js & {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    opacity: 0;
+  }
+}
+
+.js--toggle-visuallyhidden {
+  // This class is applied by default and is expected to be removed by js or
+  // overwritten within css - it differs from js--visuallyhidden in specificity
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  opacity: 0;
+}
+
+.js--no-js--not-haggard {
+
+  .js &,
+  .haggard & {
+    display: none !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+.js--no-js--haggard {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+
+  .no-js.haggard & {
+    display: block !important; /* stylelint-disable-line declaration-no-important */
+  }
+}

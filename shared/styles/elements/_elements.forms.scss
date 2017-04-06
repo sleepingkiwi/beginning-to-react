@@ -1,0 +1,116 @@
+/** Forms
+ *  -----
+ *  setting some, opinionated, defaults for form and input styling
+**/
+
+$placeholder-c: #888888;
+
+input,
+[type='search'],
+select,
+button,
+textarea {
+  // Suppress red glow that Firefox
+  // adds to form fields by default.
+  &:invalid {
+    box-shadow: none;
+  }
+
+  margin: 0;
+  border: 0;
+  padding: $bsu-s 0 $bsu-s $bsu-s*1.5;
+  white-space: normal;
+  box-shadow: none;
+  line-height: 1.3; // This seems to be a minimum for forms in chrome??
+  font-family: $brand-ff-main;
+  font-weight: normal;
+  color: $brand-c-main;
+  width: 400px;
+  max-width: 100%;
+  transition: all $brand-transition ease;
+
+  &::placeholder {
+    color: $brand-c-subtle;
+  }
+
+  &:focus,
+  &:active {
+
+    &::placeholder {
+      color: $brand-c-subtler;
+    }
+  }
+}
+
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+select[multiple] {
+  vertical-align: top;
+}
+
+button,
+.button,
+.button:visited,
+[type='reset'],
+[type='submit'],
+[type='button'] {
+  -webkit-appearance: none;
+  border-radius: $brand-radius;
+  background: $brand-c-link;
+  cursor: pointer;
+  color: $brand-c-inverse;
+  font-family: $brand-ff-main;
+  padding: $bsu-s $bsu;
+  line-height: 1.3;
+  text-decoration: none;
+  font-weight: normal;
+  outline: 0;
+  width: auto;
+
+  &:hover,
+  &:focus {
+    background: $brand-c-highlight;
+  }
+
+  &:active {
+    background: $brand-c-highlight;
+    box-shadow: inset rgba(black, 0.25) 0 1px 2px 0;
+  }
+
+  // Kill phantom spacing and dotted
+  // border that appears in Firefox.
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled],
+.button_disabled {
+  box-shadow: none;
+  user-select: none;
+  pointer-events: none;
+  color: #888888;
+  cursor: default;
+}
+
+// some webkit specifics...
+
+// @media (-webkit-min-device-pixel-ratio: 0) {
+
+::-webkit-validation-bubble-message {
+  font-family: $brand-ff-main;
+}
+// }

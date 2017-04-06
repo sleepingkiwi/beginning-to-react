@@ -1,0 +1,50 @@
+/* ------------------------------------ *\
+    $FONTS
+\* ------------------------------------ */
+
+/** Main (body) font
+ *  ----------------
+ *  we have two weights in this example
+**/
+
+@font-face {
+  font-family: 'latoregular';
+  src:
+    url('~Public/fonts/lato-regular-webfont.woff2') format('woff2'),
+    url('~Public/fonts/lato-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latobold';
+  src:
+    url('~Public/fonts/lato-bold-webfont.woff2') format('woff2'),
+    url('~Public/fonts/lato-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$brand-ff-main: 'latoregular', $sans-serif;
+
+// if you remove this (i.e. a bold variant isn't required for this site)
+// don't forget to edit base/_base.typography.scss to remove references
+$brand-ff-bold: 'latobold', $sans-serif;
+
+// if you want to add an italic or bolditalic then again make sure to
+// edit base/_base.typography.scss to add the default styling for things like <em>
+
+/** Header font
+ *  -----------
+**/
+
+@font-face {
+  font-family: 'averiaserif';
+  src:
+    url('~Public/fonts/averiaseriflibre-regular-webfont.woff2') format('woff2'),
+    url('~Public/fonts/averiaseriflibre-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$brand-ff-header: 'averiaserif', $serif;

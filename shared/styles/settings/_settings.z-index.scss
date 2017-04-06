@@ -1,0 +1,39 @@
+/** z-index assignments
+ *  -------------------
+ *  ref: https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
+ *
+ *  a nice way to be able to have a super quick overview of how z-index is being used
+ *  Indexes should all be assigned through this file so we can come back and tell at a glance where
+ *  things exist in the z-index scale.
+ */
+
+/** private z-index scale
+ *  ---------------------
+ *  don't use these anywhere other than this file...
+ */
+$brand-z-0: 0;
+$brand-z-1: 100;
+$brand-z-2: 200;
+$brand-z-3: 300;
+$brand-z-4: 400;
+$brand-z-5: 500;
+$brand-z-6: 600;
+$brand-z-7: 700;
+$brand-z-8: 800;
+$brand-z-9: 900;
+$brand-z-10: 1000;
+
+/** z-index used on this project
+ *  ----------------------------
+**/
+
+$brand-z-0--responsive-indicator : $brand-z-0;
+
+$brand-z-6--fixed-nav : $brand-z-6;
+$brand-z-6--to-top : $brand-z-6;
+
+$brand-z-7--popup : $brand-z-7;
+
+$brand-z-9--overlay : $brand-z-9;
+
+$brand-z-10--overlay__modal : $brand-z-10;

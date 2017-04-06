@@ -1,0 +1,41 @@
+/** Helper classes
+ *  --------------
+**/
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+// hide only visually, but have it available for screen readers: h5bp.com/v
+.visuallyhidden,
+.screen-reader-text,
+.screen-reader-response {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible {
+  visibility: hidden;
+}

@@ -1,0 +1,61 @@
+/** Brand settings
+ *  --------------
+ * General brand styles - mostly colour choices but other often used variables will be added here
+**/
+
+/** primary colours
+ *  ---------------
+**/
+
+// primary text colour
+$brand-c-main: #282828;
+
+// light on dark (or vice versa) text colour - an inverse to the main colour
+$brand-c-inverse: #fcfcfc;
+
+// primary link colour
+$brand-c-link: #d4604e;
+
+// primary highlight (link hovers etc.)
+$brand-c-highlight: #b96659;
+
+// body background colour
+$brand-c-body-back: #f7f7f7;
+
+// subtler versions of primary text colour
+$brand-c-subtle: #888888;
+$brand-c-subtler: #dddddd;
+
+// general ui elements (hr, dividing lines etc.)
+$brand-c-base-ui: #eeeeee;
+
+// feedback colours
+$brand-c-error: #de3e0d;
+$brand-c-success: #89af40;
+
+/** animations and transitions
+ *  --------------------------
+**/
+
+// default durations
+$brand-transition: 600ms;
+
+// bouncey ease
+$brand-ease-bounce: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+
+/** box shadows
+ *  -----------
+**/
+$brand-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+
+/** border radius
+ *  -------------
+**/
+$brand-radius: 4px;
+
+/** layout widths
+ *  -------------
+**/
+
+$brand-layout-max: 1200px;
+$brand-layout-readable: 600px;
