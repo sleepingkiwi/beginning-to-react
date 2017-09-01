@@ -29,7 +29,7 @@ paras = paras.map(p => [
 /** Component content
  *  -----------------
 **/
-const Example = () =>
+const Example = () => (
   <div id="example" className="Example wrap">
     <h1>
       {title}
@@ -56,6 +56,6 @@ const Example = () =>
       </a>
     </p>
   </div>
-;
+);
 
 export default Example;

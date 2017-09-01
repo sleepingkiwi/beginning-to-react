@@ -109,12 +109,11 @@ npm init -y
 
 ### 3. add core dependencies - [react](https://facebook.github.io/react/) & [react router](https://github.com/ReactTraining/react-router)
 ```
-$ npm install --save react react-addons-css-transition-group react-dom react-router
+$ npm install --save react react-transition-group react-dom react-router
 ```
 
 - we're installing the react core as well as react-router which we typically use on every project
-- also installing the [css transitions plugin for react](https://facebook.github.io/react/docs/animation.html).
-  - For more advanced animation might want to install [`react-addons-transition-group`]((https://facebook.github.io/react/docs/animation.html)) additionally or instead.
+- also installing `react-transition-group` the [css transitions plugin for react](https://github.com/reactjs/react-transition-group).
 
 ### 4. add core dependency - [redux](http://redux.js.org/)
 ```
@@ -136,9 +135,10 @@ npm install --save-dev webpack
 
 ### 1. install babel and dependancies - [babel.js](https://babeljs.io/)
 ```
-$ npm install --save-dev babel-core babel-preset-react babel-preset-es2015 babel-loader
+$ npm install --save-dev babel-core babel-preset-react babel-preset-es2015 babel-plugin-transform-object-rest-spread babel-loader
 ```
 - we're using both [`babel-preset-es2015`](https://babeljs.io/docs/plugins/preset-es2015/) and [`babel-preset-react`](https://babeljs.io/docs/plugins/preset-react/) to load a selection of other presets and plugins which allow babel to fully support react and stable ES6 features.
+- additionally we're loading [`babel-plugin-transform-object-rest-spread`](http://babeljs.io/docs/plugins/transform-object-rest-spread/) to allow us to use `{...props}` style object assignment - see [redux docs](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html) for thoughts.
 - `babel-loader` is used by webpack to process js with babel  ([see below](#webpack) for full webpack setup)
 
 ### 2. add babel config to package.json
@@ -149,10 +149,23 @@ $ npm install --save-dev babel-core babel-preset-react babel-preset-es2015 babel
 
 ```
 "babel": {
-    "presets": [
-        [ "es2015", { "modules": false } ],
-        "react"
+  "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
+    "react"
+  ],
+  "plugins": [
+    [
+      "transform-object-rest-spread",
+      {
+        "useBuiltIns": false
+      }
     ]
+  ]
 }
 ```
 
@@ -484,6 +497,8 @@ https://ebaytech.berlin/universal-web-apps-with-react-router-4-15002bb30ccb#.j7j
 
 > [express.js](http://expressjs.com/) is a fairly simple server framework that runs on node, we use it to serve our application although we defer routing to react-router.
 > Our goal is to run our react/js code in a universal way that will work on the server as well as on the client side
+
+> [good reference...](http://loige.co/my-universal-javascript-web-applications-talk-at-codemotion-rome-2017/)
 
 
 ## [upgrade] - webpack-dev-middleware and live reloads on express for development

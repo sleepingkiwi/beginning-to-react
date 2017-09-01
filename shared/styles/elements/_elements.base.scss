@@ -5,4 +5,8 @@ body {
   font-family: $brand-ff-main;
   color: $brand-c-main;
   background-color: $brand-c-body-back;
+
+  // for fonts that render weirdly bold on osx... you may need to use these...
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 }

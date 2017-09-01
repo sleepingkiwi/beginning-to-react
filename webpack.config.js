@@ -204,6 +204,20 @@ module.exports = (env = {}) => {
           async: /\.js$/,
         }),
 
+          /** [dev only] Hot Module Replacement
+           *  ---------------------------------
+           *  we're not doing a whole lot with this right now but it acts as livereload replacement
+           *  for our stylesheets. style-loader implements this behind the scenes!
+           *  ref: https://webpack.js.org/guides/hot-module-replacement/#hmr-with-stylesheets
+          **/
+        (() => {
+          if (!isProduction) {
+            return new webpack.HotModuleReplacementPlugin(); // Enable HMR in dev...
+          }
+            // return null in production, this is then stripped away by our array filter.
+          return null;
+        })(),
+
           /** [production only] Uglify
            *  ------------------------
           **/
@@ -509,6 +523,8 @@ module.exports = (env = {}) => {
         return {
           stats: 'normal',
           port: 9069,
+            // Tell the dev-server we're using HMR (currently just for styling)
+          hot: true,
             // serving public files
           contentBase: path.resolve(__dirname, 'public'),
             // an example proxy - for making external API calls to services without CORS.
